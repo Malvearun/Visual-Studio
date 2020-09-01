@@ -1,0 +1,16 @@
+apiVersion: v1
+Kind: Pod
+metadata:
+  name: nginx
+spec:
+  containers:
+    - image: nginx
+      name: nginx
+  imgaePullSecret:
+    - name: regcred  #refer to create secret below
+
+
+
+# docker login private-registry.io
+# docker run private-registry.io/apps/internal-app
+# kubectl create secret docket-registry regcred --docker-server=private-registry.io --docker-username=registry-user --docker-password=regis --docker-email=123@email.com

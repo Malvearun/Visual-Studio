@@ -1,0 +1,24 @@
+# Name: webapp
+# Image Name: kodekloud/event-simulator
+# Volume: PersistentVolumeClaim=claim-log-1
+# Volume Mount: /log
+
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: webapp
+spec:
+  containers:
+  - image: kodekloud/event-simulator
+    name: event-simulator
+    env:
+    - name: log_handler
+      value: file
+    volumeMounts:
+    - name: log-volume
+      mountPath: /log
+  volumes:
+  - name: log-volume
+    persistentVolumeClaim:
+      claimName: claim-log-1

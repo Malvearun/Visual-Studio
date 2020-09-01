@@ -1,0 +1,21 @@
+
+
+# Persistent Volume Claim
+# Volume Name: claim-log-1
+# Storage Request: 50Mi
+# Access modes: ReadWriteOnce
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: claim-log-1
+spec:
+  resources:
+    requests:
+      storage: 50Mi
+  accessModes:
+    - ReadWriteOnce
+
+
+
+
